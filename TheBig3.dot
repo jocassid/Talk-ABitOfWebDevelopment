@@ -1,0 +1,6 @@
+graph TheBig3{
+  root="HTML";
+  HTML -- CSS;
+  CSS -- JavaScript;
+  JavaScript -- HTML;
+}
