@@ -7,6 +7,13 @@ header, article, section, footer, aside, nav{
     padding: 0.5rem;
 }
 
+body{
+    font-size: 1.5rem;
+}
+
+h1.page-title{
+    font-size: 2rem;
+}
 
 header{
     border: solid green var(--border-width-wide);

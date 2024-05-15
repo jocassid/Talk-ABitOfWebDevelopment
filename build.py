@@ -23,7 +23,15 @@ TEMPLATE = """
 PAGES = (
     'index.html',
     'html5intro.html',
-    'pageStructure.html'
+    'pageStructure.html',
+    'figures.html',
+    'forms1.html',
+    'forms2.html',
+    'canvas.html',
+    'omittedHtml5Features.html',
+    'css.html',
+    'sassPerhaps.html',
+    'cssVariables.html',
 )
 
 DIAGRAMS = (
