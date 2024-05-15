@@ -1,0 +1,40 @@
+
+:root{
+    --border-width-wide: 0.25rem;
+}
+
+header, article, section, footer, aside, nav{
+    padding: 0.5rem;
+}
+
+
+header{
+    border: solid green var(--border-width-wide);
+    margin-bottom: 1rem;
+}
+
+
+article{
+    border: solid red var(--border-width-wide);
+    margin-bottom: 1rem;
+}
+
+section{
+    border: solid blue 0.125rem;
+    margin: 0.5rem;
+}
+
+footer{
+    border: solid orange var(--border-width-wide);
+}
+
+aside{
+    border: solid goldenrod var(--border-width-wide);
+    background: yellow;
+    margin-right: 1rem;
+}
+
+nav{
+    border: solid purple var(--border-width-wide);
+    margin-bottom: 1rem;
+}
