@@ -3,6 +3,8 @@
 from argparse import ArgumentParser
 from pathlib import Path
 from shutil import copy2
+from subprocess import run
+from sys import stderr
 
 TEMPLATE = """
 <!DOCTYPE html>
@@ -30,13 +32,16 @@ PAGES = (
     'canvas.html',
     'omittedHtml5Features.html',
     'css.html',
-    'sassPerhaps.html',
     'cssVariables.html',
+    'sassPerhaps.html',
+
 )
 
 DIAGRAMS = (
     ('TheBig3.dot', 'circo'),
 )
+
+LAYOUT_ENGINES = {'dot', 'circo'}
 
 
 class BuildError(RuntimeError):
@@ -102,10 +107,29 @@ def main(args):
         with dest_file.open('w') as out_file:
             out_file.write(template)
 
+    for diagram_tuple in DIAGRAMS:
+        tuple_length = len(diagram_tuple)
+        if tuple_length == 0:
+            continue
+        src_file = src_dir / diagram_tuple[0]
+        layout_engine = 'dot' if tuple_length < 2 else diagram_tuple[1]
+        if layout_engine not in LAYOUT_ENGINES:
+            print(
+                f"Unsupported layout engine {layout_engine}",
+                file=stderr,
+            )
+            continue
+        dest_file = dest_dir / f"{src_file.stem}.svg"
+        with dest_file.open('w') as out_file:
+            run(
+                [layout_engine, '-Tsvg', src_file],
+                stdout=out_file,
+            )
 
 
-    for diagram in DIAGRAMS:
-        pass
+
+
+
 
 
 
