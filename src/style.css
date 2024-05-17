@@ -50,3 +50,25 @@ table.input-examples > thead > tr > th:nth-of-type(1),
 table.input-examples > tbody > tr > td:nth-of-type(1){
     font-family: monospace;
 }
+
+div.css-joke{
+    width: fit-content;
+    font-size: 4rem;
+    font-weight: bold;
+    border: solid black 0.25rem;
+    padding: 1rem;
+    margin: 2rem auto 1rem auto;
+}
+
+div.css-joke > p{
+    margin: 0.5rem;
+}
+
+div#relative-css-units{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+div#relative-css-units > h4{
+    text-align: center;
+}

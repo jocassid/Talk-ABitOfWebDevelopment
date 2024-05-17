@@ -32,6 +32,7 @@ PAGES = (
     'canvas.html',
     'omittedHtml5Features.html',
     'css.html',
+    'cssKeepItRelative.html',
     'cssVariables.html',
     'sassPerhaps.html',
 
