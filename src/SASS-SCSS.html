@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<p>The second SASS syntax is SCSS which uses the extension <code>.scss</code>.
+    It uses a curly brace syntax similar to vanilla CSS so it tends to be
+    somewhat easier to learn.</p>
+
+<pre>
+@mixin button-base() {
+  @include typography(button);
+  @include ripple-surface;
+  @include ripple-radius-bounded;
+
+  display: inline-flex;
+  position: relative;
+  height: $button-height;
+  border: none;
+  vertical-align: middle;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: $mdc-button-disabled-ink-color;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+</pre>
+
+
+{% endblock %}

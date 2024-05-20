@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form>
+    <label for="caseNumber">Case Number</label>
+    <input id="caseNumber"
+           name="caseNumber"
+           type="text"
+           pattern="(AP|CR|CV|DR|)-\d{6}"/>
+    <input type="submit"/>
+</form>
+
+<pre>
+input id="caseNumber"
+           name="caseNumber"
+           type="text"
+           pattern="(AP|CR|CV|DR|)-\d{6}"/>
+</pre>
+
+{% endblock %}

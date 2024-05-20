@@ -1,12 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
 
-<h2>CSS Units</h2>
 <h3>Keep it relative.  Keep it safe. </h3>
 
 <div id="relative-css-units">
-    <h4>Good</h4>
-    <h4>Bad</h4>
 
     <table>
+        <caption>Good</caption>
         <thead>
             <tr>
                 <th>Unit</th>
@@ -19,29 +19,23 @@
                 <td>Percentage (relative to parent element)</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
+                <td>rem</td>
+                <td>Size relative to height of the page's default font size</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
+                <td>vh &amp; vw</td>
+                <td>Size relative to size of viewport (the visible portion of
+                    page).  50wh is half the width of the viewport</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
+                <td>rlh</td>
+                <td>Default line height of document</td>
             </tr>
         </tbody>
     </table>
 
     <table>
+        <caption>Bad</caption>
         <thead>
             <tr>
                 <th>Unit</th>
@@ -69,10 +63,20 @@
                 <td>em</td>
                 <td>*Size o parent element's font</td>
             </tr>
+            <tr>
+                <td>lh</td>
+                <td>** Line height of element</td>
+            </tr>
         </tbody>
     </table>
 
-    <div>* This is a relative unit</div>
+    <div style="grid-column: 1 / 3">
+        <div>* This is a relative unit, but it's relative to the parent element's font-size</div>
+        <div>** Relative unit, but effected by line height of parent elements</div>
+    </div>
+
+
 
 </div>
 
+{% endblock %}

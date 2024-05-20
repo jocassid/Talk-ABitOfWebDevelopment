@@ -1,2 +1,26 @@
-<h1 class="page-title">CSS Variables</h1>
+{% extends 'base.html' %}
+{% block content %}
 
+<p>Define variables as follows for the root element:</p>
+
+<pre>
+:root{
+    --border-width-wide: 0.25rem;
+    --border-width-narrow: 0.125rem;
+    --color-background: white;
+    --color-foreground: black;
+}
+</pre>
+
+<p>Example of variable Use:</p>
+
+<pre>
+canvas{
+    width: 16rem;
+    height: 16rem;
+    border: solid var(--color-foreground) var(--border-width-narrow);
+}
+</pre>
+
+
+{% endblock %}

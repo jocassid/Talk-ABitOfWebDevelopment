@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<p>SASS supports two different syntaxes of source files.  The first is
+    Indented this is the original SASS syntax and hence uses the
+    <code>.sass</code> file extension.</p>
+
+<p class="caution">Indented syntax doesn't support expressions that wrap onto multiple lines.</p>
+
+<pre>
+@mixin button-base()
+  @include typography(button)
+  @include ripple-surface
+  @include ripple-radius-bounded
+
+  display: inline-flex
+  position: relative
+  height: $button-height
+  border: none
+  vertical-align: middle
+
+  &:hover
+    cursor: pointer
+
+  &:disabled
+    color: $mdc-button-disabled-ink-color
+    cursor: default
+    pointer-events: none
+</pre>
+
+
+{% endblock %}

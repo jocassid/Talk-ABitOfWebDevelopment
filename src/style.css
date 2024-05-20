@@ -1,7 +1,12 @@
 
 :root{
     --border-width-wide: 0.25rem;
+    --border-width-narrow: 0.125rem;
+    --color-background: white;
+    --color-foreground: black;
 }
+
+/* rules applied to element types */
 
 header, article, section, footer, aside, nav{
     padding: 0.5rem;
@@ -9,11 +14,27 @@ header, article, section, footer, aside, nav{
 
 body{
     font-size: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-h1.page-title{
-    font-size: 2rem;
+canvas{
+    width: 16rem;
+    height: 16rem;
+    border: solid var(--color-foreground) var(--border-width-narrow);
 }
+
+pre{
+    background-color: lightgray;
+    padding: 0.5rem;
+    border: solid var(--color-foreground) var(--border-width-narrow);
+}
+
+table{
+    border-collapse: collapse;
+}
+
+
 
 header{
     border: solid green var(--border-width-wide);
@@ -27,7 +48,7 @@ article{
 }
 
 section{
-    border: solid blue 0.125rem;
+    border: solid blue var(--border-width-narrow);
     margin: 0.5rem;
 }
 
@@ -41,7 +62,11 @@ aside{
     margin-right: 1rem;
 }
 
-nav{
+h1.page-title{
+    font-size: 2rem;
+}
+
+nav.page-structure{
     border: solid purple var(--border-width-wide);
     margin-bottom: 1rem;
 }
@@ -55,7 +80,7 @@ div.css-joke{
     width: fit-content;
     font-size: 4rem;
     font-weight: bold;
-    border: solid black 0.25rem;
+    border: solid black var(--border-width-wide);
     padding: 1rem;
     margin: 2rem auto 1rem auto;
 }
@@ -67,8 +92,54 @@ div.css-joke > p{
 div#relative-css-units{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 5rem;
+    row-gap: 2rem;
 }
 
-div#relative-css-units > h4{
-    text-align: center;
+div#relative-css-units > table:first-of-type{
+    background-color: lightgreen;
+}
+
+div#relative-css-units > table:last-of-type{
+    background-color: lightcoral;
+}
+
+
+div#relative-css-units > table > thead > tr > th,
+div#relative-css-units > table > tbody > tr > td{
+    border: solid var(--color-foreground) var(--border-width-narrow);
+    padding: 0.25rem;
+}
+
+nav.template-nav{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+nav.template-nav > div > h2{
+    margin: auto;
+}
+
+nav.template-nav > div{
+    display: flex;
+}
+
+nav.template-nav > div > a{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+div.template-content{
+    width: fit-content;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.sass-intro,
+div.bulma{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    column-gap: 2rem;
+    row-gap: 1rem;
 }

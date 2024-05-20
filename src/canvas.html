@@ -1,1 +1,46 @@
-<h1>&lt;canvas&gt;</h1>
+{% extends 'base.html' %}
+{% block content %}
+
+<script>
+
+function drawOnCanvas()
+{
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.lineWidth = 1;
+
+    let startX = 100;
+    let startY = 100;
+
+    for(let angleDegrees=0; angleDegrees<360; angleDegrees += 5)
+    {
+        let angleRadians = angleDegrees * (Math.PI / 180);
+        let endX = startX + 90 * Math.cos(angleRadians);
+        let endY = startY + 90 * Math.sin(angleRadians);
+
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(endX, endY);
+        ctx.stroke();
+    }
+}
+
+function clearCanvas(){
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+</script>
+
+<div>
+    <canvas width="200" height="200"></canvas>
+</div>
+<div>
+    <button onclick="drawOnCanvas()">Draw</button>
+    <button onclick="clearCanvas()">Erase</button>
+</div>
+
+
+{% endblock %}

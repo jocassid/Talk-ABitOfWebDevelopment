@@ -1,6 +1,5 @@
-<h1 class="page-title">Form Elements</h1>
-
-<h2>New <code>&lt;input&gt;</code> Types</h2>
+{% extends 'base.html' %}
+{% block content %}
 
 <form>
     <table class="input-examples">
@@ -12,30 +11,30 @@
         </thead>
         <tbody>
             <tr>
-                <td><input type="email"/></td>
+                <td><input type="email" name="email"/></td>
                 <td>&lt;input type="email"/&gt;</td>
 
             </tr>
             <tr>
-                <td><input type="number" min="0" max="20" step="5"/></td>
+                <td><input type="number" name="number" min="0" max="20" step="5"/></td>
                 <td>&lt;input type="number" min="0" max="20" step="5"/&gt;</td>
             </tr>
             <tr>
-                <td><input type="range" min="-8" max="8" step="2"/></td>
+                <td><input type="range" name="range" min="-8" max="8" step="2"/></td>
                 <td>&lt;input type="range" min="-8" max="8" step="2"/&gt;</td>
             </tr>
             <tr>
-                <td><input type="url"/></td>
+                <td><input type="url" name="url"/></td>
                 <td>&lt;input type="url"/&gt;</td>
             </tr>
             <tr>
-                <td><input type="file" multiple/></td>
+                <td><input type="file" name="file" multiple/></td>
                 <td>&lt;input type="file" multiple/&gt;</td>
             </tr>
         </tbody>
     </table>
 
-
-
     <input type="submit" value="submit"/>
 </form>
+
+{% endblock %}

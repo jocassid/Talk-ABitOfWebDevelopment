@@ -1,1 +1,40 @@
-<h1 class="page-title">SASS Perhaps?</h1>
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="sass-intro">
+
+    <div style="
+            grid-area: 1 / 2 / 1 / 3;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: 1rem;
+         ">
+        <img src="sass_logo.svg" alt="SASS Logo" style="height: 25vh;"/>
+    </div>
+
+    <a href="https://sass-lang.com"
+       style="
+            grid-area: 1 / 3 / 1 / 4;
+            margin-top: auto;
+            margin-bottom: auto;
+           ">https://sass-lang.com</a>
+
+    <div style="grid-area: 2 / 1 / 2 / 3">
+        <h4>Pros</h4>
+        <ul>
+            <li>Can speed stylesheet development</li>
+            <li>Helps to organize complex style sheets</li>
+        </ul>
+    </div>
+
+    <div style="grid-area: 2 / 3 / 2 / 5">
+        <h4>Cons</h4>
+        <ul>
+            <li>Requires compilation step</li>
+            <li>One more thing to learn</li>
+        </ul>
+    </div>
+
+</div>
+
+{% endblock %}

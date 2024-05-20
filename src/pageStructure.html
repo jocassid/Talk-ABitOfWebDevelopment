@@ -1,5 +1,5 @@
-
-<h1>Page Structure Elements</h1>
+{% extends 'base.html' %}
+{% block content %}
 
 <p>Not everything needs to be a <code>&lt;div&gt;</code></p>
 
@@ -7,9 +7,11 @@
     <code>&lt;header&gt;&lt;/header&gt;</code>
 </header>
 
-<nav>
+<nav class="page-structure">
+    <code>&lt;nav&gt;</code>
     <a href="">Link to nowhere</a>
     <a href="">Another Link to nowhere</a>
+    <code>&lt;/nav&gt;</code>
 </nav>
 
 <aside class="structure" style="float: left; width: 20%">
@@ -40,4 +42,6 @@
 <footer>
     <code>&lt;footer&gt;&lt;/footer&gt;</code>
 </footer>
+
+{% endblock %}
 

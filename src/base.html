@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <nav class="template-nav">
+        <div>
+            {% if prev_url %}
+                <a href="{{ prev_url }}">Prev</a>
+            {% endif %}
+        </div>
+        <div>
+            {% if title %}
+                <h2 class="page-title">{{ title|safe }}</h2>
+            {% endif %}
+        </div>
+        <div>
+            {% if next_url %}
+                <a href="{{ next_url }}">Next</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="template-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

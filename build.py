@@ -6,36 +6,46 @@ from shutil import copy2
 from subprocess import run
 from sys import stderr
 
-TEMPLATE = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>A Bit of Web Development</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-    <NAVIGATION/>
-    <CONTENT/>
-</body>
-</html>
-"""
+from jinja2 import (
+    Environment,
+    FileSystemLoader,
+    select_autoescape,
+)
 
 
-PAGES = (
-    'index.html',
-    'html5intro.html',
-    'pageStructure.html',
-    'figures.html',
-    'forms1.html',
-    'forms2.html',
-    'canvas.html',
-    'omittedHtml5Features.html',
-    'css.html',
-    'cssKeepItRelative.html',
-    'cssVariables.html',
-    'sassPerhaps.html',
-
+PAGES_AND_TITLES = (
+    ('index.html', ''),
+    ('html5intro.html', ''),
+    ('pageStructure.html', 'Structural Tags'),
+    ('figures.html', '<code>&lt;figure&gt;</code>'),
+    ('newInputTypes.html', 'New <code>&lt;input&gt;</code> Types'),
+    ('inputWithDatalist.html', '<code>&lt;input/&gt;</code> with datalist'),
+    (
+        'patternValidation.html',
+        '<code>&lt;input/&gt;</code> validation with <code>pattern</code>',
+    ),
+    ('canvas.html', '<code>&lt;canvas/&gt;</code>'),
+    ('omittedHtml5Features.html', "But wait, there's more"),
+    ('css.html', "CSS"),
+    ('cssKeepItRelative.html', "CSS Units"),
+    ('cssVariables.html', "CSS Variables"),
+    ('gridLayout.html', 'Grid Layout'),
+    ('flexboxLayout.html', 'Flexbox Layout'),
+    ('sassPerhaps.html', "SASS Perhaps?"),
+    ('SASS-Indented.html', 'SASS Indented'),
+    ('SASS-SCSS.html', 'SASS SCSS'),
+    ('bulma.html', 'BULMA'),
+    ('bootstrap.html', 'Bootstrap'),
+    ('javascript.html', 'JavaScript'),
+    ('javascriptClass.html', 'JavaScript classes'),
+    ('typescript.html', 'TypeScript'),
+    ('nodejs.html', 'Node.js'),
+    ('nvm.html', 'Node Version Manager (NVM)'),
+    ('npm.html', 'Node Package Manager (NPM)'),
+    ('javascriptFrameworks.html', 'JavaScript Frameworks'),
+    ('htmx.html', 'HTMX'),
+    ('python.html', 'Python Web Development'),
+    ('references.html', 'References'),
 )
 
 DIAGRAMS = (
@@ -49,38 +59,21 @@ class BuildError(RuntimeError):
     pass
 
 
-def build_link(href, text):
-    return f'<a href="{href}">{text}</a>'
-
-
 def nav_links(index, pages):
-    links = []
+    context = {
+        'prev_url': '',
+        'next_url': ''
+    }
     if index > 0:
-        links.append(
-            build_link(pages[index - 1], 'Previous')
-        )
+        context['prev_url'] = pages[index - 1][0]
+
     if index + 1 < len(pages):
-        links.append(
-            build_link(pages[index + 1], 'Next')
-        )
-    return "\n".join(links)
+        context['next_url'] = pages[index + 1][0]
+
+    return context
 
 
-def main(args):
-    src_dir = Path(args.input_dir)
-    if not src_dir.exists():
-        raise BuildError(f"{src_dir} doesn't exist")
-
-    if not src_dir.is_dir():
-        raise BuildError(f"{src_dir} isn't a directory")
-
-    dest_dir = Path(args.output_dir)
-    if dest_dir.exists():
-        if not dest_dir.is_dir():
-            raise BuildError(f"{dest_dir} isn't a directory")
-    else:
-        dest_dir.mkdir()
-
+def copy_non_source_files(src_dir: Path, dest_dir: Path) -> None:
     for src_file in src_dir.iterdir():
         suffix = src_file.suffix
         if suffix in ('.html', '.dot'):
@@ -89,25 +82,32 @@ def main(args):
             copy2(src_file, dest_dir)
             continue
 
-        print(src_file)
-        print(suffix)
 
-    for i, page in enumerate(PAGES):
+def render_html(src_dir: Path, dest_dir: Path) -> None:
+
+    env = Environment(
+        loader=FileSystemLoader(src_dir),
+        autoescape=select_autoescape(['html', 'xml'])
+    )
+
+    for i, page_and_title in enumerate(PAGES_AND_TITLES):
+        page, title = page_and_title
         src_file = src_dir / page
         if not src_file.exists():
             raise BuildError(f"{src_file} not found")
 
-        nav_html = nav_links(i, PAGES)
+        context = {'title': title}
+        context.update(nav_links(i, PAGES_AND_TITLES))
 
-        template = TEMPLATE
-        with src_file.open('r') as in_file:
-            template = template.replace('<CONTENT/>', in_file.read())
-        template = template.replace('<NAVIGATION/>', nav_html)
-
+        template = env.get_template(page)
         dest_file = dest_dir / page
         with dest_file.open('w') as out_file:
-            out_file.write(template)
+            out_file.write(
+                template.render(**context)
+            )
 
+
+def render_diagrams(src_dir: Path, dest_dir: Path) -> None:
     for diagram_tuple in DIAGRAMS:
         tuple_length = len(diagram_tuple)
         if tuple_length == 0:
@@ -128,13 +128,24 @@ def main(args):
             )
 
 
+def main(args):
+    src_dir = Path(args.input_dir)
+    if not src_dir.exists():
+        raise BuildError(f"{src_dir} doesn't exist")
 
+    if not src_dir.is_dir():
+        raise BuildError(f"{src_dir} isn't a directory")
 
+    dest_dir = Path(args.output_dir)
+    if dest_dir.exists():
+        if not dest_dir.is_dir():
+            raise BuildError(f"{dest_dir} isn't a directory")
+    else:
+        dest_dir.mkdir()
 
-
-
-
-
+    copy_non_source_files(src_dir, dest_dir)
+    render_html(src_dir, dest_dir)
+    render_diagrams(src_dir, dest_dir)
 
 
 if __name__ == '__main__':
