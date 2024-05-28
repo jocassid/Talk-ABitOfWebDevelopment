@@ -4,6 +4,21 @@
 
 ## Notes
 
+### html5intro.html
+
+- The HTML5 has been around for a number of years and has good support across 
+modern browsers.
+- Adds a number of features that developers may have not encountered.
+
+### pageStructure.html
+
+- Modern web pages tend to use a ton of <div></div> elements.  HTML5 
+introduced a number of elements for which divs have typically been used.
+
+### figures.html
+
+- The figure element was added to provide an easy way of creating an image with a caption
+
 ### newInputTypes.html
 
 - HTML5 introduced several new input types.  These types provided some 

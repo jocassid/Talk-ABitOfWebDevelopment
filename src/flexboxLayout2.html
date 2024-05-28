@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 {% block pageSpecificCss %}
 
-    div.flex-demo-1{
+    div.flex-demo-2{
         display: flex;
         flex-wrap: wrap;
         column-gap: 0.5rem;
         row-gap: 0.5rem;
+        flex-direction: column;
         border: var(--border-thin);
         padding: 0.5rem;
-        width: 15rem;
+        height: 10rem;
+        width: 33vw;
     }
 
-    div.flex-demo-1 > div{
+    div.flex-demo-2 > div{
         padding: 0.5rem;
-        background-color: var(--color-pastel-green);
+        background-color: var(--color-pastel-blue);
     }
 
 {% endblock %}
 {% block content %}
 
-<div class="flex-demo-1">
+<div class="flex-demo-2">
     <div>1</div>
     <div>2</div>
     <div>3</div>
@@ -31,21 +33,23 @@
     <div>9</div>
     <div>10</div>
 </div>
-    
+
 <pre>
-div.flex-demo-1{
+div.flex-demo-2{
     display: flex;
     flex-wrap: wrap;
     column-gap: 0.5rem;
     row-gap: 0.5rem;
+    flex-direction: column;
     border: var(--border-thin);
     padding: 0.5rem;
-    width: 15rem;
+    height: 10rem;
+    width: 33vw;
 }
 
-div.flex-demo-1 > div{
+div.flex-demo-2 > div{
     padding: 0.5rem;
-    background-color: var(--color-pastel-green);
+    background-color: var(--color-pastel-blue);
 }
 </pre>
 

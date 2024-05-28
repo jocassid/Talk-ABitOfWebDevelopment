@@ -2,8 +2,15 @@
 :root{
     --border-width-wide: 0.25rem;
     --border-width-narrow: 0.125rem;
+
     --color-background: white;
     --color-foreground: black;
+    --color-pastel-pink: pink;
+    --color-pastel-green: palegreen;
+    --color-pastel-yellow: rgb(255, 250, 205);
+    --color-pastel-blue: paleturquoise;
+
+    --border-thin: solid var(--color-foreground) var(--border-width-narrow);
 }
 
 /* rules applied to element types */
@@ -22,6 +29,16 @@ canvas{
     width: 16rem;
     height: 16rem;
     border: solid var(--color-foreground) var(--border-width-narrow);
+}
+
+dialog{
+    height: 75vh;
+    width: 50vw;
+    margin: auto;
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 pre{
@@ -73,6 +90,7 @@ nav.page-structure{
 
 table.input-examples > thead > tr > th:nth-of-type(1),
 table.input-examples > tbody > tr > td:nth-of-type(1){
+    padding: 0.25rem;
     font-family: monospace;
 }
 
@@ -110,6 +128,8 @@ div#relative-css-units > table > tbody > tr > td{
     border: solid var(--color-foreground) var(--border-width-narrow);
     padding: 0.25rem;
 }
+
+
 
 nav.template-nav{
     display: grid;

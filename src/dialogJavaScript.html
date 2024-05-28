@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<pre>
+function getDialog(){
+  return document.getElementById(
+    'demo-dialog'
+  );
+}
+
+function show(){
+  getDialog().show();
+}
+
+function showModal(){
+  getDialog().showModal();
+}
+
+function cancel(){
+  getDialog().close();
+}
+
+function save(){
+  getDialog().close();
+  let quest = document.getElementById(
+    'quest'
+  ).value;
+  alert(`Your quest is: ${quest}`);
+}
+</pre>
+
+{% endblock %}

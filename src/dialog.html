@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block pageSpecificJavaScript %}
+
+    function getDialog(){
+        return document.getElementById('demo-dialog');
+    }
+
+    function show(){
+        getDialog().show();
+    }
+
+    function showModal(){
+        getDialog().showModal();
+    }
+
+    function cancel(){
+        getDialog().close();
+    }
+
+    function save(){
+        getDialog().close();
+        let quest = document.getElementById('quest').value;
+        alert(`Your quest is: ${quest}`);
+    }
+
+
+{% endblock %}
+
+
+{% block content %}
+
+    <dialog id="demo-dialog" style="width: 50vw">
+        <div class="dialog-content">
+            <form method="dialog">
+                <div>
+                    <label for="quest">What is your quest?</label>
+                    <input id="quest" required/>
+                </div>
+                <button type="reset" onclick="cancel()">Cancel</button>
+                <button type="submit" onclick="save()">Save</button>
+            </form>
+        </div>
+    </dialog>
+
+
+    <pre>
+&lt;dialog id="demo-dialog" style="width: 50vw"&gt;
+  &lt;div class="dialog-content"&gt;
+    &lt;form method="dialog"&gt;
+      &lt;div&gt;
+        &lt;label for="quest"&gt;What is your quest?&lt;/label&gt;
+        &lt;input id="quest" required/&gt;
+      &lt;/div&gt;
+      &lt;button type="reset" onclick="cancel()"&gt;Cancel&lt;/button&gt;
+      &lt;button type="submit" onclick="save()"&gt;Save&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;
+    </pre>
+
+    <div>
+        <button onclick="show();">Show</button>
+        <button onclick="showModal();">Show Modal</button>
+    </div>
+
+{% endblock %}

@@ -5,7 +5,25 @@
     <title>A Bit of Web Development</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<script>
+
+    {% block pageSpecificJavaScript %}
+    {% endblock %}
+
+    {% block onLoadFunction %}
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    {% endblock %}
+</script>
+<style>
+    {% block pageSpecificCss %}
+    {% endblock %}
+</style>
+<body onload="onLoad()">
     <nav class="template-nav">
         <div>
             {% if prev_url %}
