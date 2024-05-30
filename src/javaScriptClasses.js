@@ -1,7 +1,3 @@
-{% extends 'base.html' %}
-{% block content %}
-
-<pre>
 class Person{
     constructor(firstName, lastName){
         this.firstName = firstName;
@@ -17,8 +13,3 @@ class Person{
 
 const person = new Person('Grace', 'Hopper');
 console.log(person.fullName);
-
-
-</pre>
-
-{% endblock %}

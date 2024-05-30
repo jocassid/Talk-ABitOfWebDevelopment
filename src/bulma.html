@@ -1,36 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="bulma">
-    <p style="grid-area: 1 / 2 / 1 / 4">Bulma
-        (<a href="https://bulma.io/">https://bulma.io/</a>) is a pure CSS framework.</p>
+<p>Bulma (<a href="https://bulma.io/">https://bulma.io/</a>)</p>
 
-    <div style="grid-area: 2 / 1 / 2 / 3">
-        <h4>Pros</h4>
+<ul>
+    <li>Pure CSS framework (Inevitably, you'll need to write a bit of JavaScript)
         <ul>
-            <li>Easy to use</li>
-            <li>Lightweight</li>
-            <li>Where you need to use JavaScript the documentation provides sample code</li>
+            <li>PRO: Doesn't pull in a huge block of JavaScript</li>
+            <li>PRO: Write JavaScript the way you want to</li>
+            <li>CON: You'll probably wind up writing a bit more
+                JavaScript than you would with something like bootstrap</li>
+            <li>Documentation is pretty good about providing samples
+                where you need to add JavaScript</li>
         </ul>
-    </div>
+    <li>Based on flexbox & grid</li>
+    <li>Define themes using SASS/SCSS</li>
+</ul>
 
-    <div style="grid-area: 2 / 3 / 2 / 5">
-        <h4>Cons</h4>
-        <ul>
-            <li>Sometimes you need to add a bit of JavaScript to get things to
-                work.</li>
-        </ul>
-    </div>
-
-    <pre style="grid-area: 3 / 1 / 3 / 5; margin-left: auto; margin-right: auto;">
+<pre style="grid-area: 3 / 1 / 3 / 5; margin-left: auto; margin-right: auto;">
 &lt;button class="button is-white"&gt;White&lt;/button&gt;
 &lt;button class="button is-light"&gt;Light&lt;/button&gt;
 &lt;button class="button is-dark"&gt;Dark&lt;/button&gt;
 &lt;button class="button is-black"&gt;Black&lt;/button&gt;
 &lt;button class="button is-text"&gt;Text&lt;/button&gt;
 &lt;button class="button is-ghost"&gt;Ghost&lt;/button&gt;
-    </pre>
-</div>
-
+</pre>
 
 {% endblock %}

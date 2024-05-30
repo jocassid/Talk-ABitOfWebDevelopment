@@ -94,42 +94,6 @@ table.input-examples > tbody > tr > td:nth-of-type(1){
     font-family: monospace;
 }
 
-div.css-joke{
-    width: fit-content;
-    font-size: 4rem;
-    font-weight: bold;
-    border: solid black var(--border-width-wide);
-    padding: 1rem;
-    margin: 2rem auto 1rem auto;
-}
-
-div.css-joke > p{
-    margin: 0.5rem;
-}
-
-div#relative-css-units{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 5rem;
-    row-gap: 2rem;
-}
-
-div#relative-css-units > table:first-of-type{
-    background-color: lightgreen;
-}
-
-div#relative-css-units > table:last-of-type{
-    background-color: lightcoral;
-}
-
-
-div#relative-css-units > table > thead > tr > th,
-div#relative-css-units > table > tbody > tr > td{
-    border: solid var(--color-foreground) var(--border-width-narrow);
-    padding: 0.25rem;
-}
-
-
 
 nav.template-nav{
     display: grid;
