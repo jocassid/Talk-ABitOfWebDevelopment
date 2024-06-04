@@ -1,15 +1,24 @@
-class Person{
-    constructor(firstName, lastName){
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    get fullName(){
-        return `${this.firstName} ${this.lastName}`;
+
+class Point{
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
     }
 
+    toString(){
+        return `(${this.x}, ${this.y})`;
+    }
 
+    static distance(pt1, pt2){
+        return Math.sqrt(
+            (pt2.x - pt1.x) ** 2 + (pt2.y - pt1.y) ** 2
+        );
+    }
 }
 
+p1 = new Point(0, 0);
+p2 = new Point(3, 4);
+console.log(`The distance between ${p1.toString()} and ${p2.toString()} is ${Point.distance(p1, p2)}`);
 
-const person = new Person('Grace', 'Hopper');
-console.log(person.fullName);
+
+console.log('done');

@@ -41,6 +41,7 @@ PAGES_AND_TITLES = (
     ('bootstrap.html', 'Bootstrap'),
     ('javascript.html', 'JavaScript'),
     ('javascriptClass.html', 'JavaScript classes'),
+    ('javascriptClasses2.html', 'Other class features'),
     ('typescript.html', 'TypeScript'),
     ('nodejs.html', 'Node.js'),
     ('nvm.html', 'Node Version Manager (NVM)'),
