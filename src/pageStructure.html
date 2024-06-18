@@ -1,4 +1,39 @@
 {% extends 'base.html' %}
+{% block pageSpecificCss %}
+
+header{
+    border: solid green var(--border-width-wide);
+    margin-bottom: 1rem;
+}
+
+
+article{
+    border: solid red var(--border-width-wide);
+    margin-bottom: 1rem;
+}
+
+section{
+    border: solid blue var(--border-width-narrow);
+    margin: 0.5rem;
+}
+
+footer{
+    border: solid orange var(--border-width-wide);
+}
+
+aside{
+    border: solid goldenrod var(--border-width-wide);
+    background: yellow;
+    margin-right: 1rem;
+}
+
+nav.page-structure{
+    border: solid purple var(--border-width-wide);
+    margin-bottom: 1rem;
+}
+
+
+{% endblock %}
 {% block content %}
 
 <p>Not everything needs to be a <code>&lt;div&gt;</code></p>
