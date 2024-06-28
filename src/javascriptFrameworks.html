@@ -1,5 +1,57 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<table>
+    <thead>
+        <tr>
+            <th>Framework</th>
+            <th>Website</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>JQuery</td>
+            <td><a href="https://jquery.com/">jquery.com</a></td>
+            <td>Has features for: navigating/manipulating the DOM and making AJAX
+                requests.  Has separate JQueryUI with several handy widgets  Several
+                other frameworks are based on it.</td>
+        </tr>
+        <tr>
+            <td>Angular<sup>[1]</sup></td>
+            <td><a href="https://angular.dev">angular.dev<sup>[3]</sup></a></td>
+            <td>Currently popular framework.  Uses TypeScript.  Fairly
+                heavy-weight.  Focused on building single-page
+                applications.  Has it's own ecosystem of extensions<sup>[2]</sup></td>
+        </tr>
+        <tr>
+            <td>React</td>
+            <td><a href="https://react.dev/">react.dev</a></td>
+            <td>Another currently popular framework.  Written in JavaScript
+                or TypeScript</td>
+        </tr>
+        <tr>
+            <td>Vue.js</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>HTMX</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3">and a bunch more</td>
+        </tr>
+    </tbody>
+</table>
+
+<ol class="footnotes">
+    <li>More specifically Angular 2.0+</li>
+    <li>Probably true of a lot of these frameworks</li>
+    <li>Apparently the URL just changed</li>
+</ol>
+
+
 
 {% endblock %}

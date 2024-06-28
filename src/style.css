@@ -104,3 +104,8 @@ table.command-examples > tbody > tr > td:first-of-type{
 table.command-examples > tbody > tr > td:nth-of-type(2){
     padding-left: 1rem;
 }
+
+ol.footnotes{
+    font-style: italic;
+    color: gray;
+}
