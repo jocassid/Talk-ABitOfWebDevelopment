@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+
+header{
+    border: solid green var(--border-width-wide);
+    margin-bottom: 1rem;
+}
+
+
+article{
+    border: solid red var(--border-width-wide);
+    margin-bottom: 1rem;
+}
+
+section{
+    border: solid blue var(--border-width-narrow);
+    margin: 0.5rem;
+}
+
+footer{
+    border: solid orange var(--border-width-wide);
+}
+
+aside{
+    border: solid goldenrod var(--border-width-wide);
+    background: yellow;
+    margin-right: 1rem;
+}
+
+nav.page-structure{
+    border: solid purple var(--border-width-wide);
+    margin-bottom: 1rem;
+}
+
+
+
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="html5intro.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">Structural Tags</h2>
+            
+        </div>
+        <div>
+            
+                <a href="figures.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<p>Not everything needs to be a <code>&lt;div&gt;</code></p>
+
+<header>
+    <code>&lt;header&gt;&lt;/header&gt;</code>
+</header>
+
+<nav class="page-structure">
+    <code>&lt;nav&gt;</code>
+    <a href="">Link to nowhere</a>
+    <a href="">Another Link to nowhere</a>
+    <code>&lt;/nav&gt;</code>
+</nav>
+
+<aside class="structure" style="float: left; width: 20%">
+    <code>&lt;aside&gt;Handy for explanatory text in the margin&lt;/aside&gt;</code>
+</aside>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Maecenas pharetra
+    convallis posuere morbi leo urna molestie at.  Urna neque viverra justo
+    nec ultrices. Nec ullamcorper sit amet risus nullam eget felis eget.
+    Diam phasellus vestibulum lorem sed risus. Adipiscing vitae proin
+    sagittis nisl rhoncus mattis rhoncus urna neque. Cursus in hac
+    habitasse platea dictumst. Non nisi est sit amet facilisis magna etiam. </p>
+
+<article style="">
+    <code>&lt;article&gt;</code>
+    <section>
+        <code>&lt;section&gt;Section A&lt;/section&gt;</code>
+    </section>
+    <section>
+        <code>&lt;section&gt;Section B&lt;/section&gt;</code>
+    </section>
+    <code>&lt;/article&gt;</code>
+</article>
+
+
+
+<footer>
+    <code>&lt;footer&gt;&lt;/footer&gt;</code>
+</footer>
+
+
+    </div>
+</body>
+</html>

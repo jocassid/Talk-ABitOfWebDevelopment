@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+    
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="cssKeepItRelative.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">CSS Variables</h2>
+            
+        </div>
+        <div>
+            
+                <a href="gridLayout.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<p>Define variables as follows for the root element:</p>
+
+<pre>
+:root{
+    --border-width-wide: 0.25rem;
+    --border-width-narrow: 0.125rem;
+    --color-background: white;
+    --color-foreground: black;
+}
+</pre>
+
+<p>Example of variable Use:</p>
+
+<pre>
+canvas{
+    width: 16rem;
+    height: 16rem;
+    border: solid var(--color-foreground) var(--border-width-narrow);
+}
+</pre>
+
+
+
+    </div>
+</body>
+</html>

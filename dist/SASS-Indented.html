@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+    
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="sassPerhaps.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">SASS Indented</h2>
+            
+        </div>
+        <div>
+            
+                <a href="SASS-SCSS.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<p>SASS supports two different syntaxes of source files.  The first is
+    Indented this is the original SASS syntax and hence uses the
+    <code>.sass</code> file extension.</p>
+
+<p class="caution">Indented syntax doesn't support expressions that wrap onto multiple lines.</p>
+
+<pre>
+@mixin button-base()
+  @include typography(button)
+  @include ripple-surface
+  @include ripple-radius-bounded
+
+  display: inline-flex
+  position: relative
+  height: $button-height
+  border: none
+  vertical-align: middle
+
+  &:hover
+    cursor: pointer
+
+  &:disabled
+    color: $mdc-button-disabled-ink-color
+    cursor: default
+    pointer-events: none
+</pre>
+
+
+
+    </div>
+</body>
+</html>

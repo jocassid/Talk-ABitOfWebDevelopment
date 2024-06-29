@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+    
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="javascriptFrameworks.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">HTMX</h2>
+            
+        </div>
+        <div>
+            
+                <a href="python.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<p>Motivation & Example from the <a href="https://htmx.org">htmx.org</a> website</p>
+
+<h3>Motivation</h3>
+
+<ul>
+    <li>Why should only &lt;a&gt; &amp; &lt;form&gt; be able to make HTTP
+        requests?</li>
+    <li>Why should only click & submit events trigger them?</li>
+    <li>Why should only GET & POST methods be available?</li>
+    <li>Why should you only be able to replace the entire screen?</li>
+</ul>
+
+<h3>Example</h3>
+
+<pre>
+    &lt;script src="https://unpkg.com/htmx.org@2.0.0"&gt;&lt;/script&gt;
+    &lt;!-- When a user clicks on this button, issue an AJAX request to
+        /clicked, and replace the entire button with the HTML
+        response --&gt;
+    &lt;button hx-post="/clicked" hx-swap="outerHTML"&gt;
+        Click Me
+    &lt;/button&gt;
+</pre>
+
+
+    </div>
+</body>
+</html>
