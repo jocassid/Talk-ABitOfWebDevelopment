@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+    
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="dialogJavaScript.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title"><code>&lt;canvas/&gt;</code></h2>
+            
+        </div>
+        <div>
+            
+                <a href="omittedHtml5Features.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<script>
+
+function drawOnCanvas()
+{
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.lineWidth = 1;
+
+    let startX = 100;
+    let startY = 100;
+
+    for(let angleDegrees=0; angleDegrees<360; angleDegrees += 5)
+    {
+        let angleRadians = angleDegrees * (Math.PI / 180);
+        let endX = startX + 90 * Math.cos(angleRadians);
+        let endY = startY + 90 * Math.sin(angleRadians);
+
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(endX, endY);
+        ctx.stroke();
+    }
+}
+
+function clearCanvas(){
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+</script>
+
+<div>
+    <canvas width="200" height="200"></canvas>
+</div>
+<div>
+    <button onclick="drawOnCanvas()">Draw</button>
+    <button onclick="clearCanvas()">Erase</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

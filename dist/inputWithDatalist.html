@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+    
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="newInputTypes.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title"><code>&lt;input/&gt;</code> with datalist</h2>
+            
+        </div>
+        <div>
+            
+                <a href="patternValidation.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<form>
+    <label for="favoriteColor">What is your favorite color?</label>
+    <input id="favoriteColor"
+           name="favoriteColor"
+           type="text"
+           list="color"/>
+    <datalist id="color">
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+    </datalist>
+
+    <input type="submit"/>
+</form>
+
+
+<pre>
+    &lt;input id="favoriteColor"
+           name="favoriteColor"
+           type="text"
+           list="color"/&gt;
+    &lt;datalist id="color"&gt;
+        &lt;option value="red"&gt;red&lt;/option&gt;
+        &lt;option value="green"&gt;green&lt;/option&gt;
+        &lt;option value="blue"&gt;blue&lt;/option&gt;
+    &lt;/datalist>
+</pre>
+
+
+    </div>
+</body>
+</html>

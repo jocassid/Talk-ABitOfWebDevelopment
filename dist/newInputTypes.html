@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+    function onLoad()
+    {
+        let url = new URL(document.location);
+        console.debug(url.searchParams);
+
+        let numberParamsWithValues = 0;
+        let dialog = document.getElementById('searchParamsDialog');
+        for(const [key, value] of url.searchParams)
+        {
+            if(value === undefined || value === null || value === '')
+            {
+                continue;
+            }
+            numberParamsWithValues++;
+
+            let text = document.createTextNode(`key=${key} value=${value}`);
+            let div = document.createElement('div');
+            div.appendChild(text)
+            dialog.append(div);
+        }
+
+        if(numberParamsWithValues === 0)
+            return;
+
+        dialog.showModal();
+    }
+
+
+</script>
+<style>
+    
+
+table.input-examples > thead > tr > th:nth-of-type(1),
+table.input-examples > tbody > tr > td:nth-of-type(1){
+    padding: 0.25rem;
+    font-family: monospace;
+}
+
+
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="figures.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">New <code>&lt;input&gt;</code> Types</h2>
+            
+        </div>
+        <div>
+            
+                <a href="inputWithDatalist.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<dialog id="searchParamsDialog">
+    <form method="dialog">
+        <button>Close</button>
+    </form>
+    <div class="dialog-content">
+        
+    </div>
+</dialog>
+
+<form>
+    <table class="input-examples">
+        <thead>
+            <tr>
+                <th>Appearance</th>
+                <th>HTML</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="email" name="email"/></td>
+                <td>&lt;input type="email"/&gt;</td>
+
+            </tr>
+            <tr>
+                <td><input type="number" name="number" min="0" max="20" step="5"/></td>
+                <td>&lt;input type="number" min="0" max="20" step="5"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="range" name="range" min="-8" max="8" step="2"/></td>
+                <td>&lt;input type="range" min="-8" max="8" step="2"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="url" name="url"/></td>
+                <td>&lt;input type="url"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="file" name="file" multiple/></td>
+                <td>&lt;input type="file" multiple/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="color" name="color"/></td>
+                <td>&lt;input type="color"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="date" name="date"/></td>
+                <td>&lt;input type="date"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="datetime-local" name="datetime-local"/></td>
+                <td>&lt;input type="datetime-local"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="month" name="month" min="2024-01" max="2024-12"/></td>
+                <td>&lt;input type="month"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="time"/></td>
+                <td>&lt;input type="time"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="week"/></td>
+                <td>&lt;input type="week"/&gt;</td>
+            </tr>
+            <tr>
+                <td><input type="tel" name="tel"/></td>
+                <td>&lt;input type="tel"/&gt;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <input type="submit" value="submit"/>
+</form>
+
+
+    </div>
+</body>
+</html>

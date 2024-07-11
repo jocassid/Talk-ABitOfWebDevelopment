@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+
+    div.flex-demo-2{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 0.5rem;
+        row-gap: 0.5rem;
+        flex-direction: column;
+        border: var(--border-thin);
+        padding: 0.5rem;
+        height: 10rem;
+        width: 33vw;
+    }
+
+    div.flex-demo-2 > div{
+        padding: 0.5rem;
+        background-color: var(--color-pastel-blue);
+    }
+
+
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="flexboxLayout.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">Flexbox Layout 2</h2>
+            
+        </div>
+        <div>
+            
+                <a href="sassPerhaps.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<div class="flex-demo-2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+</div>
+
+<pre>
+div.flex-demo-2{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    flex-direction: column;
+    border: var(--border-thin);
+    padding: 0.5rem;
+    height: 10rem;
+    width: 33vw;
+}
+
+div.flex-demo-2 > div{
+    padding: 0.5rem;
+    background-color: var(--color-pastel-blue);
+}
+</pre>
+
+
+    </div>
+</body>
+</html>

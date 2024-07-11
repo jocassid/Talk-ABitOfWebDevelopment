@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+
+div#relative-css-units{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5rem;
+    row-gap: 2rem;
+}
+
+div#relative-css-units > table:first-of-type{
+    background-color: lightgreen;
+}
+
+div#relative-css-units > table:last-of-type{
+    background-color: lightcoral;
+}
+
+
+div#relative-css-units > table > thead > tr > th,
+div#relative-css-units > table > tbody > tr > td{
+    border: solid var(--color-foreground) var(--border-width-narrow);
+    padding: 0.25rem;
+}
+
+
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="css.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">CSS Units</h2>
+            
+        </div>
+        <div>
+            
+                <a href="cssVariables.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<h3>Keep it relative.  Keep it safe. </h3>
+
+<div id="relative-css-units">
+
+    <table>
+        <caption>Good</caption>
+        <thead>
+            <tr>
+                <th>Unit</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>%</td>
+                <td>Percentage (relative to parent element)</td>
+            </tr>
+            <tr>
+                <td>rem</td>
+                <td>Size relative to height of the page's default font size</td>
+            </tr>
+            <tr>
+                <td>vh &amp; vw</td>
+                <td>Size relative to size of viewport (the visible portion of
+                    page).  50wh is half the width of the viewport</td>
+            </tr>
+            <tr>
+                <td>rlh</td>
+                <td>Default line height of document</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <caption>Bad</caption>
+        <thead>
+            <tr>
+                <th>Unit</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>px</td>
+                <td>pixels</td>
+            </tr>
+            <tr>
+                <td>pt</td>
+                <td>points (1/72 in)</td>
+            </tr>
+            <tr>
+                <td>mm</td>
+                <td>millimeters</td>
+            </tr>
+            <tr>
+                <td>in</td>
+                <td>inches</td>
+            </tr>
+            <tr>
+                <td>em</td>
+                <td>*Size o parent element's font</td>
+            </tr>
+            <tr>
+                <td>lh</td>
+                <td>** Line height of element</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="grid-column: 1 / 3">
+        <div>* This is a relative unit, but it's relative to the parent element's font-size</div>
+        <div>** Relative unit, but effected by line height of parent elements</div>
+    </div>
+
+
+
+</div>
+
+
+    </div>
+</body>
+</html>

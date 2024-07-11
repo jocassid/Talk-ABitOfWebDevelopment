@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+    
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="dialog.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title"><code>&lt;dialog/&gt;<code> JavaScript</h2>
+            
+        </div>
+        <div>
+            
+                <a href="canvas.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<pre>
+function getDialog(){
+  return document.getElementById(
+    'demo-dialog'
+  );
+}
+
+function show(){
+  getDialog().show();
+}
+
+function showModal(){
+  getDialog().showModal();
+}
+
+function cancel(){
+  getDialog().close();
+}
+
+function save(){
+  getDialog().close();
+  let quest = document.getElementById(
+    'quest'
+  ).value;
+  alert(`Your quest is: ${quest}`);
+}
+</pre>
+
+
+    </div>
+</body>
+</html>

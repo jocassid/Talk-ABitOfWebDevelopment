@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+
+    #grid-demo{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 3rem;
+        row-gap: 2rem;
+    }
+
+    #grid-demo div{
+        border: solid black var(--border-width-narrow);
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    #grid-demo > div.pink{
+        padding: 2rem;
+        grid-row: 1 / 3;
+        background-color: var(--color-pastel-pink);
+    }
+
+    #grid-demo > div.top-center{
+        background-color: var(--color-pastel-green);
+    }
+
+    #grid-demo > div.yellow{
+        background-color: var(--color-pastel-yellow);
+        grid-row: 2 / 3;
+        grid-column: 2 / 4;
+    }
+
+    #grid-demo > div.blue{
+        background-color: var(--color-pastel-blue);
+        grid-area: 3 / 1 / 5 / 3;
+    }
+
+
+
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="cssVariables.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">Grid Layout</h2>
+            
+        </div>
+        <div>
+            
+                <a href="flexboxLayout.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+    <div id="grid-demo">
+        <div class="pink">grid-row: 1 / 3;<br/>(column set automatically)</div>
+        <div class="top-center">placed automatically</div>
+        <div class="yellow">
+            grid-row: 2 / 3;<br/>
+            grid-column: 2 / 4;
+        </div>
+        <div class="blue">grid-area: 3 / 1 / 5 / 3;</div>
+    </div>
+
+    <pre>
+    #grid-demo{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 3rem;
+        row-gap: 2rem;
+    }
+    </pre>
+
+
+    </div>
+</body>
+</html>

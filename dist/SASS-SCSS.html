@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Bit of Web Development</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+
+    
+    
+
+    
+
+        function onLoad()
+        {
+            console.debug('onLoad')
+        }
+
+    
+</script>
+<style>
+    
+    
+</style>
+<body onload="onLoad()">
+    <nav class="template-nav">
+        <div>
+            
+                <a href="SASS-Indented.html">Prev</a>
+            
+        </div>
+        <div>
+            
+                <h2 class="page-title">SASS SCSS</h2>
+            
+        </div>
+        <div>
+            
+                <a href="bulma.html">Next</a>
+            
+        </div>
+    </nav>
+    <div class="template-content">
+        
+
+<p>The second SASS syntax is SCSS which uses the extension <code>.scss</code>.
+    It uses a curly brace syntax similar to vanilla CSS so it tends to be
+    somewhat easier to learn.</p>
+
+<pre>
+@mixin button-base() {
+  @include typography(button);
+  @include ripple-surface;
+  @include ripple-radius-bounded;
+
+  display: inline-flex;
+  position: relative;
+  height: $button-height;
+  border: none;
+  vertical-align: middle;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: $mdc-button-disabled-ink-color;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+</pre>
+
+
+
+    </div>
+</body>
+</html>
